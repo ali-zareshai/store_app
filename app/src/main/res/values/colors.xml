@@ -3,4 +3,24 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="tab1">#00c2b9</color>
+    <color name="tab2">#2aa6ff</color>
+    <color name="tab3">#853eff</color>
+    <color name="tab4">#00d773</color>
+    <color name="redkam">#c0ff5252</color>
+    <color name="redpore">#e5ff0000</color>
+    <color name="red">#420097</color>
+    <color name="black">#000000</color>
+    <color name="toolbar">#00b9b0</color>
+    <color name="fabcolor">#009be2</color>
+    <color name="colorcard">#ececec</color>
+    <color name="red2">#c20000</color>
+    <color name="backnum">#7eb0b6</color>
+    <color name="re">#7eb0b6</color>
+    <color name="black1">#d4d4d4</color>
+    <color name="greenpore">#ee287c01</color>
+    <color name="black100">#222222</color>
+    <color name="black80">#494949</color>
+    <color name="viewBg">#f1f5f8</color>
+    <color name="album_title">#4c4c4c</color>
 </resources>

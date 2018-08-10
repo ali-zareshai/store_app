@@ -1,9 +1,132 @@
 <resources>
-    <string name="app_name">KavirEleClient</string>
+    <string name="app_name">KavirElctronic</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string name="username">نام کاربری</string>
+    <string name="password">رمزعبور</string>
+    <string name="login">ورود</string>
+
+    <string name="loading">در حال اتصال</string>
+    <string name="please_wait">لطفا انتظار</string>
+    <string name="no_conn">ارتباط با اینترنت برقرار نمی باشد</string>
+    <string name="incomplete_feild">لطفا تمام فیلدها را پر کنید</string>
+    <string name="error_pass">نام کاربری و یا پسورد اشتباه است</string>
+    <string name="welcome">خوش آمدید:</string>
+    <string name="save_shod">اطلاعات با موفقیت ذخیره شد</string>
+
+    <string name="tab1">سفارشات</string>
+    <string name="upload_success">آپلود با موفقیت انجام شد</string>
+    <string name="upload_fail">خطا در آپلود</string>
+    <string name="ok">بله</string>
+    <string name="start_download">دانلود در پس زمینه شروع شد</string>
+    <string name="success_download">دانلود با موفقیت به اتمام رسید</string>
+    <string name="no">خیر</string>
+    <string name="islocked">قفل شد</string>
+    <string name="lock">قفل کردن مکالمه</string>
+    <string name="are_you_sure">آیا شما مطمئنی؟</string>
+    <string name="upload">آپلود ...</string>
+    <string name="header">انتخاب ورودی:</string>
+    <string name="save">به یاد بسپار</string>
+    <string name="login_now">در حال لاگین ...</string>
+    <string name="yes">تائید</string>
+    <string name="tab2">محصولات</string>
+    <string name="tab3">مشتریان</string>
+    <string name="id">شناسه: </string>
+    <string name="refrence">مرجع: </string>
+    <string name="customer">تاریخ: </string>
+    <string name="customer2">مشتری: </string>
+    <string name="total">مبلغ سفارش: </string>
+    <string name="pay">روش پرداخت: </string>
+    <string name="status">وضعیت: </string>
+    <string name="add_date">تاریخ سفارش: </string>
+    <string name="up_date">بروز رسانی: </string>
+    <string name="spinner_title">نوع فیلتر</string>
+    <string name="no_result">نتیجه ای یافت نشد</string>
+    <string name="ta">تا</string>
+    <string name="price">قیمت فروش: </string>
+    <string name="mojodi">موجودی: </string>
+    <string name="az_date">از تاریخ</string>
+    <string name="ta_date">تا تاریخ</string>
+    <string name="more">جزئیات بیشتر ...</string>
+    <string name="wait">یک لحظه ...</string>
+    <string name="play">پخش</string>
+    <string name="stop">ایست</string>
+    <string name="subject">موضوع</string>
+    <string name="text">مطلب</string>
+    <string name="pic">آپلود تصویر</string>
+    <string name="video">لینک ویدیو</string>
+    <string name="resigter">ثبت</string>
+    <string name="cancel">انصراف</string>
+    <string name="no_file">فایلی یافت نشد</string>
+    <string name="channel">کانال ها</string>
+    <string name="kharid">قیمت خرید: </string>
+    <string name="name">نام: </string>
+    <string name="support">پشتیبانی </string>
+    <string name="group">واحد ها </string>
+    <string name="email">ایمیل: </string>
+    <string name="tamas">اطلاعات تماس: </string>
+
+    <string name="gallery">گالری </string>
+    <string name="new_matlab">مطلب جدید </string>
+    <string name="camera">دوربین </string>
+    <string name="success">اطلاعات با موفقیت ثبت شد ... </string>
+    <string name="microfon">میکروفون </string>
+    <string name="titleempty">متن موضوع نمی تواند خالی باشد </string>
+    <string name="sefareshat">سفارشات: </string>
+    <string name="address_1">آدرس اول: </string>
+    <string name="address_2">آدرس دوم: </string>
+    <string name="city">شهر: </string>
+    <string name="category">شاخه: </string>
+    <string name="last_update">آخرین آپدیت: </string>
+    <string name="combine">ترکیبات: </string>
+    <string name="codepost">کدپستی: </string>
+    <string name="no_exist">وجود ندارد</string>
+    <string name="tele">تلفن: </string>
+    <string name="send">ارسال</string>
+    <string name="mobile">موبایل: </string>
+    <string name="msgisempty">متن پیغام نمی تواند خالی باشد </string>
+    <string name="search_test">متن جستجو</string>
+    <string name="yourmsg">پیغام شما ...</string>
+    <string name="incomplete">لطفا فیلد های تاریخ را وارد کنید</string>
+    <string-array name="type_filter">
+        <item>منتظر پرداخت چک</item>
+        <item>پذیرش پرداخت آنلاین</item>
+        <item>درحال آماده سازی</item>
+        <item>درحال حمل</item>
+        <item>ارسال شد(کدرهگیری وارد شد)</item>
+        <item>لغو سفارش</item>
+        <item>برگشت خورده</item>
+        <item>خطا در پرداخت</item>
+        <item>اتمام موجودی</item>
+        <item>منتظر پرداخت با فیش بانکی</item>
+        <item>منتظر ارسال با تیپاکس</item>
+        <item>اشکال در سفارش</item>
+        <item>ثبت فیش بانکی</item>
+        <item>پرداخت ثبت شد</item>
+        <item>در حال آماده سازی(زماندار)</item>
+        <item>ارسال شد(منتظر کد رهگیری)</item>
+        <item>ارسال شد(کدرهگیری وارد شد2)</item>
+        <item>در انتظار پرداخت</item>
+        <item>در انتظار تاييد سايت</item>
+        <item>تاييد شده - آماده پرداخت</item>
+    </string-array>
+    <string-array name="cus_filter">
+        <item>شناسه</item>
+        <item>اسم</item>
+        <item>فامیل</item>
+        <item>ایمیل</item>
+    </string-array>
+    <string-array name="prodect_filter">
+        <item>شناسه</item>
+        <item>مرجع</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_channel">Channels</string>
 </resources>

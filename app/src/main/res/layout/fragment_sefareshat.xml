@@ -1,0 +1,143 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="fragment.SefareshatFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/reltool"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolsearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_alignParentTop="true"
+            android:background="@color/toolbar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Spinner
+                    android:id="@+id/spinner_filter"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:prompt="@string/spinner_title" />
+
+                <Spinner
+                    android:id="@+id/spinner_search"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/spinner_filter"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="110dp"
+                    android:entries="@array/type_filter"
+                    android:prompt="@string/spinner_title"
+                    android:visibility="invisible" />
+
+                <customviews.CustomEditText2
+                    android:id="@+id/filter_txt"
+                    android:layout_width="150dp"
+                    android:hint="@string/search_test"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/spinner_filter"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="110dp"
+                    android:textDirection="rtl"
+                    android:visibility="invisible" />
+
+                <RelativeLayout
+                    android:id="@+id/rel_filter_date"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_alignRight="@+id/spinner_filter"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="105dp">
+
+                    <Button
+                        android:id="@+id/az_date_btn"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/az_date"
+                        android:textSize="8dp" />
+
+                    <customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="77dp"
+                        android:padding="2dp"
+                        android:text="@string/ta" />
+
+                    <Button
+                        android:id="@+id/ta_date_btn"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/ta_date"
+                        android:textSize="8dp" />
+
+                </RelativeLayout>
+
+                <ImageButton
+                    android:id="@+id/search_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50dp"
+                    android:background="@color/toolbar"
+                    android:paddingRight="3dp"
+                    android:src="@drawable/ic_search_black_24dp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/reltool"
+        android:layout_height="match_parent">
+
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swiprefreshorder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/sefareshrecyc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:background="@drawable/catstile"
+                android:scrollbars="vertical" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/flbadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:src="@drawable/ic_add_black_24dp"
+            app:fabSize="normal" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
