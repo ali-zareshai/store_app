@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 
+import fragment.ProdectFragment;
 import fragment.SefareshatFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -129,13 +130,13 @@ public class MainActivity extends AppCompatActivity
         ////////////// enable /////////////////
 
 //        if (SP.getBoolean("sefareshat",false)){
-//            bottomNavigation.enableItemAtPosition(0);
+            bottomNavigation.enableItemAtPosition(0);
 //        }else {
 //            bottomNavigation.disableItemAtPosition(0);
 //        }
 //        //
 //        if (SP.getBoolean("prodect",false)){
-//            bottomNavigation.enableItemAtPosition(1);
+            bottomNavigation.enableItemAtPosition(1);
 //        }else {
 //            bottomNavigation.disableItemAtPosition(1);
 //        }
@@ -181,15 +182,15 @@ public class MainActivity extends AppCompatActivity
                         ft.addToBackStack(null);
                         ft.commit();
                         return true;
-//                    case 2:
-//                        ft = getFragmentManager().beginTransaction();
-////                        ft.setCustomAnimations(R.anim.slide_out_up,R.anim.slide_in_up);
-////                        ft.addToBackStack(null);
-//
-//                        ft.replace(R.id.fragment,CustomerFragment.newInstance() );
+                    case 1:
+                        ft = getFragmentManager().beginTransaction();
+//                        ft.setCustomAnimations(R.anim.slide_out_up,R.anim.slide_in_up);
 //                        ft.addToBackStack(null);
-//                        ft.commit();
-//                        return true;
+
+                        ft.replace(R.id.fragment, ProdectFragment.newInstance() );
+                        ft.addToBackStack(null);
+                        ft.commit();
+                        return true;
 //                    case 1:
 //                        ft = getFragmentManager().beginTransaction();
 ////                        ft.setCustomAnimations(R.anim.slide_out_up,R.anim.slide_in_up);
