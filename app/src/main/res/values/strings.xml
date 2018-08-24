@@ -92,6 +92,7 @@
     <string name="msgisempty">متن پیغام نمی تواند خالی باشد </string>
     <string name="search_test">متن جستجو</string>
     <string name="yourmsg">پیغام شما ...</string>
+    <string name="selectdate">تاریخ</string>
     <string name="incomplete">لطفا فیلد های تاریخ را وارد کنید</string>
     <string-array name="type_filter">
         <item>منتظر پرداخت چک</item>
@@ -124,6 +125,14 @@
     <string-array name="prodect_filter">
         <item>شناسه</item>
         <item>مرجع</item>
+        <item>نام</item>
+        <item>تاریخ</item>
+        <item>موجودی</item>
+    </string-array>
+    <string-array name="shart_filter">
+        <item>بزرگتر</item>
+        <item> مساوی </item>
+        <item>کوچکتر</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

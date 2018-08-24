@@ -20,22 +20,42 @@
 
                 <Spinner
                     android:id="@+id/spinner_filter_prodect"
-                    android:layout_width="130dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="5dp"
                     android:entries="@array/prodect_filter"
+                    android:prompt="@string/spinner_title" />
+                <Spinner
+                    android:id="@+id/spinner_filter_shart"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="80dp"
+                    android:entries="@array/shart_filter"
                     android:prompt="@string/spinner_title" />
                 <customviews.CustomEditText2
                     android:layout_width="120dp"
                     android:textDirection="rtl"
+                    android:visibility="gone"
                     android:hint="@string/search_test"
                     android:id="@+id/value_prodect"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="135dp"
+                    android:layout_marginRight="160dp"
                     android:layout_height="wrap_content" />
+                <customviews.CustomButton
+                    android:layout_width="110dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="170dp"
+                    android:padding="1dp"
+                    android:id="@+id/selectdate_btn"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/btn_back"
+                    android:text="@string/selectdate"
+                    android:layout_height="30dp" />
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:src="@drawable/ic_search_black_24dp"
