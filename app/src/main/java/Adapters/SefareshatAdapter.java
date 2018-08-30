@@ -2,6 +2,7 @@ package Adapters;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.kavireletronic.ali.kavireleclient.R;
@@ -45,6 +47,7 @@ public class SefareshatAdapter extends RecyclerView.Adapter<SefareshatAdapter.Ho
         holder.met_pritxt.setText(FormatHelper.toPersianNumber(sefareshatModel.getMethod_price()));
         holder.pricetxt.setText(FormatHelper.toPersianNumber(sefareshatModel.getPrice()));
         holder.datetxt.setText(FormatHelper.toPersianNumber(sefareshatModel.getDate_sefaresh()));
+        holder.right_anno.setBackgroundColor(Color.parseColor(sefareshatModel.getColor()));
     }
 
     @Override
@@ -54,6 +57,7 @@ public class SefareshatAdapter extends RecyclerView.Adapter<SefareshatAdapter.Ho
 
     public class Holder extends RecyclerView.ViewHolder{
         TextView idtxt,reftxt,pricetxt,met_pritxt,statustxt,datetxt;
+        RelativeLayout right_anno;
         public Holder(View itemView) {
             super(itemView);
 
@@ -63,6 +67,7 @@ public class SefareshatAdapter extends RecyclerView.Adapter<SefareshatAdapter.Ho
             met_pritxt=(TextView)itemView.findViewById(R.id.paytxt);
             statustxt=(TextView)itemView.findViewById(R.id.statustxt);
             datetxt=(TextView)itemView.findViewById(R.id.adddatetxt);
+            right_anno=(RelativeLayout)itemView.findViewById(R.id.right_anno);
 
         }
     }

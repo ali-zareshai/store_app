@@ -22,6 +22,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import util.Factory;
+import util.Policy;
+
+import static maes.tech.intentanim.CustomIntent.customType;
 
 public class LoginActivity extends AppCompatActivity {
     EditText pswd,usrusr;
@@ -89,6 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (response.body().getMsg().equals("ok")){
                         editor.putString("id_user",response.body().getId());
                         editor.putString("name_user",response.body().getName());
+                        setPolicys(response.body());
                         if (save){
                             editor.putString("username",username);
                             editor.putString("pass",pass);
@@ -97,8 +101,9 @@ public class LoginActivity extends AppCompatActivity {
                         //// show msg welcome
                         MDToast mdToast=MDToast.makeText(getApplicationContext(), getString(R.string.welcome)+response.body().getName(),MDToast.LENGTH_SHORT,MDToast.TYPE_SUCCESS);
                         mdToast.show();
-                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                        Intent intent=new Intent(LoginActivity.this,SplashActivity.class);
                         startActivity(intent);
+                        customType(LoginActivity.this,"fadein-to-fadeout");
                     }else{
                         progressBar.setVisibility(View.INVISIBLE);
                     }
@@ -113,5 +118,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setPolicys(LoginModel body) {
+        Policy.setSefareshat(body.getSefareshat());
+        Policy.setProdect(body.getProdect());
+        Policy.setbazargani(body.getBazagani());
+        Policy.setfani(body.getFani());
+        Policy.setforosh(body.getForosh());
     }
 }

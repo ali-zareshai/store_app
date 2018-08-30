@@ -1,18 +1,27 @@
 package model;
 
 public class SefareshatModel {
-    private String id,refrence,price,method_price,status,date_sefaresh;
+    private String id,refrence,price,method_price,status,date_sefaresh,color;
 
     public SefareshatModel() {
     }
 
-    public SefareshatModel(String id, String refrence, String price, String method_price, String status, String date_sefaresh) {
+    public SefareshatModel(String id, String refrence, String price, String method_price, String status, String date_sefaresh, String color) {
         this.id = id;
         this.refrence = refrence;
         this.price = price;
         this.method_price = method_price;
         this.status = status;
         this.date_sefaresh = date_sefaresh;
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getId() {

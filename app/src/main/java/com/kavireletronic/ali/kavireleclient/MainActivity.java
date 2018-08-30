@@ -23,6 +23,7 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 
 import fragment.ProdectFragment;
 import fragment.SefareshatFragment;
+import util.Policy;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -129,17 +130,17 @@ public class MainActivity extends AppCompatActivity
 //        bottomNavigation.addItem(item3);
         ////////////// enable /////////////////
 
-//        if (SP.getBoolean("sefareshat",false)){
+        if (Policy.getSefareshat()){
             bottomNavigation.enableItemAtPosition(0);
-//        }else {
-//            bottomNavigation.disableItemAtPosition(0);
-//        }
+        }else {
+            bottomNavigation.disableItemAtPosition(0);
+        }
 //        //
-//        if (SP.getBoolean("prodect",false)){
+        if (Policy.getProdect()){
             bottomNavigation.enableItemAtPosition(1);
-//        }else {
-//            bottomNavigation.disableItemAtPosition(1);
-//        }
+        }else {
+            bottomNavigation.disableItemAtPosition(1);
+        }
 //        //
 //        if (SP.getBoolean("customer",false)){
 //            bottomNavigation.enableItemAtPosition(2);

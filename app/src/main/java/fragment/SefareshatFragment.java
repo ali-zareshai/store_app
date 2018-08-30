@@ -235,11 +235,11 @@ public class SefareshatFragment extends Fragment {
         //____________________________________________________________
         Retrofit retrofit=Factory.getRetrofit();
         Sefareshat sefareshat=retrofit.create(Sefareshat.class);
-
+        Log.e("id_user",SP.getString("id_user",""));
         sefareshat.querySearch(filter_type,searchtxt,SP.getString("id_user","")).enqueue(new Callback<List<SefareshatModel>>() {
             @Override
             public void onResponse(Call<List<SefareshatModel>> call, Response<List<SefareshatModel>> response) {
-//                Log.e("msg",response.message());
+                Log.e("msg",response.message());
                 if (response.isSuccessful()){
                     sefareshatAdapter=null;
                     sefareshatAdapter=new SefareshatAdapter(response.body(),getActivity());
@@ -252,7 +252,7 @@ public class SefareshatFragment extends Fragment {
             @Override
             public void onFailure(Call<List<SefareshatModel>> call, Throwable t) {
                 progressDialog.dismiss();
-                Log.e("error","error");
+                Log.e("error",call.toString());
             }
         });
     }
