@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_cover_height"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:scaleType="fitXY" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/thumbnail"
+                android:layout_height="50dp">
+                <RelativeLayout
+                    android:layout_width="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:src="@drawable/ic_dots"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="@dimen/album_title_padding"
+                        android:layout_height="40dp" />
+
+                </RelativeLayout>
+
+            <customviews.CustomTextView3
+                android:id="@+id/title"
+                android:text="بیلیبلاتلت"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/album_title_padding"
+                android:paddingRight="@dimen/album_title_padding"
+                android:paddingTop="@dimen/album_title_padding"
+                android:textColor="@color/album_title"
+                android:textSize="@dimen/album_title" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/id_groupchat"
+                android:visibility="gone"
+                android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/url_groupchat"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
