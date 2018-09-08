@@ -7,7 +7,7 @@ public class FormatHelper {
 
 
     public static String toPersianNumber(String text) {
-        if (text.length() == 0) {
+        if (text.length() == 0 || text.equals("")) {
             return "";
         }
         String out = "";

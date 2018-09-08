@@ -1,7 +1,7 @@
 package model;
 
 public class LoginModel {
-    private String msg,id,name,sefareshat,prodect,customer,fani,bazagani,forosh,add_channel1,remove_chat;
+    private String msg,id,name,sefareshat,prodect,customer,fani,bazargani,forosh,add_channel1,remove_chat;
 
     public LoginModel(String msg, String id, String name, String sefareshat, String prodect, String customer, String fani, String bazagani, String forosh, String add_channel1, String remove_chat) {
         this.msg = msg;
@@ -11,7 +11,7 @@ public class LoginModel {
         this.prodect = prodect;
         this.customer = customer;
         this.fani = fani;
-        this.bazagani = bazagani;
+        this.bazargani = bazagani;
         this.forosh = forosh;
         this.add_channel1 = add_channel1;
         this.remove_chat = remove_chat;
@@ -50,11 +50,11 @@ public class LoginModel {
     }
 
     public String getBazagani() {
-        return bazagani;
+        return bazargani;
     }
 
     public void setBazagani(String bazagani) {
-        this.bazagani = bazagani;
+        this.bazargani = bazagani;
     }
 
     public String getForosh() {
