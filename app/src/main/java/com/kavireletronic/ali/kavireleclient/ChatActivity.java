@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Camera;
 import android.net.Uri;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -23,17 +24,25 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.crowdfire.cfalertdialog.CFAlertDialog;
+import com.example.jean.jcplayer.model.JcAudio;
+import com.example.jean.jcplayer.view.JcPlayerView;
 import com.valdesekamdem.library.mdtoast.MDToast;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.MsgChatAdapter;
 import Interface.Chat;
+import Interface.OnClickSoundChat;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cafe.adriel.androidaudiorecorder.AndroidAudioRecorder;
+import cafe.adriel.androidaudiorecorder.model.AudioChannel;
+import cafe.adriel.androidaudiorecorder.model.AudioSampleRate;
+import cafe.adriel.androidaudiorecorder.model.AudioSource;
 import model.ChatMsgModel;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -44,11 +53,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import util.Factory;
+import util.Option;
 
-public class ChatActivity extends AppCompatActivity implements View.OnClickListener {
+public class ChatActivity extends AppCompatActivity implements View.OnClickListener, OnClickSoundChat {
     private String msg,id_group;
     private SharedPreferences SP;
     private MsgChatAdapter msgChatAdapter;
+    private JcPlayerView jcplayerView;
+    private List<ChatMsgModel> chatMsgModelList;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerViewChat;
     private static final int GALLERY=100;
@@ -103,6 +115,8 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         btn_submit=(ImageButton)findViewById(R.id.enter_chat1);
         msg_edittxt=(EditText)findViewById(R.id.chat_edit_text1) ;
         recyclerViewChat=(RecyclerView)findViewById(R.id.chatrecyc) ;
+        jcplayerView = (JcPlayerView) findViewById(R.id.jcplayerView);
+
         btn_submit.setOnClickListener(this);
         upload_btn.setOnClickListener(this);
 
@@ -127,6 +141,8 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                     recyclerViewChat.setLayoutManager(layoutManager);
                     msgChatAdapter=new MsgChatAdapter(response.body(),getApplicationContext());
                     recyclerViewChat.setAdapter(msgChatAdapter);
+                    chatMsgModelList=response.body();
+                    msgChatAdapter.setOnClickSoundChat(this);
                     recyclerViewChat.scrollToPosition(response.body().size()-1);
                 }
             }
@@ -161,11 +177,35 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                     case 1:
                         selectCamera();
                         break;
+                    case 2:
+                        selectMic();
+                        break;
                 }
                 dialogInterface.dismiss();
             }
         });
         builder.show();
+    }
+
+    private void selectMic() {
+        String filePath = Environment.getExternalStorageDirectory() + "/recorded_audio.wav";
+        int color = getResources().getColor(R.color.colorPrimaryDark);
+        int requestCode = 0;
+        AndroidAudioRecorder.with(this)
+                // Required
+                .setFilePath(filePath)
+                .setColor(color)
+                .setRequestCode(requestCode)
+
+                // Optional
+                .setSource(AudioSource.MIC)
+                .setChannel(AudioChannel.MONO)
+                .setSampleRate(AudioSampleRate.HZ_48000)
+                .setAutoStart(true)
+                .setKeepDisplayOn(true)
+
+                // Start recording
+                .record();
     }
 
     @Override
@@ -187,6 +227,8 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             cursor.close();
         }else if (requestCode== CAMERA && resultCode==RESULT_OK && data!=null){
             Bitmap photo = (Bitmap) data.getExtras().get("data");
+        }else if (requestCode == 0 && resultCode == RESULT_OK && data!=null) {
+           /// recorde audio
         }
     }
 
@@ -230,5 +272,15 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     private void selectGally() {
         Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(i, GALLERY);
+    }
+
+    @Override
+    public void OnclickPlaySoundChat(View view, int positon) {
+        ChatMsgModel chatMsgModel=chatMsgModelList.get(positon);
+        String url= Option.URL_SOUND+chatMsgModel.getMsg_video();
+        ArrayList<JcAudio> jcAudios = new ArrayList<>();
+        jcAudios.add(JcAudio.createFromURL(chatMsgModel.getDate(), url));
+        jcplayerView.initPlaylist(jcAudios, null);
+
     }
 }
